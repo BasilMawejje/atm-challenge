@@ -18,7 +18,7 @@ describe Person do
   end
 
   it 'is expected to have a :account attribute' do
-    expect(subject.account).to be nil
+    expect(subject.account).to be subject.account
   end
 
   describe 'can create an Account' do
