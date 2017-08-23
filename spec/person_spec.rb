@@ -1,10 +1,9 @@
 require './lib/person'
 require './lib/atm'
+require './lib/account'
 
 describe Person do
-  # before do
-    subject { described_class.new(name: 'Basil') }
-  # end
+  subject { described_class.new(name: 'Basil') }
 
   it 'is expected to have a :name on initialize' do
     expect(subject.name).not_to be nil
@@ -23,11 +22,9 @@ describe Person do
   end
 
   describe 'can create an Account' do
-    let(:person) { described_class.new(name: 'Basil') }
-    let(:account) {described_class.new()}
-    before { person.create_account }
+    before { subject.create_account }
     it 'of Account class ' do
-      expect(person.account).to be_an_instance_of Account
+      expect(subject.account).to be_an_instance_of Account
     end
 
     it 'with himself as an owner' do

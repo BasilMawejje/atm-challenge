@@ -2,19 +2,18 @@ class Person
   attr_accessor :name, :cash, :account
 
   def initialize(attr = {})
-    if @name != nil
-      no_name
-    else
-      @name = Person.name
+    if attr.key?(:name)
+      @name = attr[:name]
       @cash = 0
       @account = nil
+      create_account
+    else
+      no_name
     end
   end
 
   def create_account
-  end
-
-  def deposit
+    @account = Account.new(owner: self)
   end
 
   def no_name
