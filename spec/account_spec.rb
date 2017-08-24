@@ -1,8 +1,8 @@
-require './lib/account.rb'
+require './lib/account'
 require 'date'
 
 describe Account do
-  let(:person) {instance_double('Person', name: 'Thomas')}
+  let(:person) {instance_double('Person', name: 'Basil')}
   subject { described_class.new({owner: person}) }
 
   it 'is expected to have an owner' do
